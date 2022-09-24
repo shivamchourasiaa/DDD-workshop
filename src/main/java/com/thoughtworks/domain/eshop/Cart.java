@@ -1,11 +1,12 @@
-package com.thoughtworks.domain;
+package com.thoughtworks.domain.eshop;
 
-import com.thoughtworks.domain.constants.ProductName;
+import com.thoughtworks.domain.eshop.constants.ProductName;
 
 import java.util.ArrayList;
 
 public class Cart {
     private final ArrayList<Item> items = new ArrayList<>();
+    private boolean checkoutStatus = false;
 
     public void add(Item item) {
         if (items.contains(item)) {
@@ -31,5 +32,18 @@ public class Cart {
 
     public void remove(Item item) {
         items.remove(item);
+    }
+
+    public Order checkout() {
+        this.checkoutStatus = true;
+        Order order = new Order();
+        for (Item item : items) {
+            order.add(item.getProduct());
+        }
+        return order;
+    }
+
+    public boolean isCheckedOut() {
+        return checkoutStatus;
     }
 }

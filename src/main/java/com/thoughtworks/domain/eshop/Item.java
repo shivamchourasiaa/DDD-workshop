@@ -1,6 +1,6 @@
-package com.thoughtworks.domain;
+package com.thoughtworks.domain.eshop;
 
-import com.thoughtworks.domain.constants.ProductName;
+import com.thoughtworks.domain.eshop.constants.ProductName;
 
 public class Item {
     private final Product product;
@@ -25,6 +25,10 @@ public class Item {
     }
 
     public void addQuantity() {
-        this.quantity+=1;
+        this.quantity += 1;
+    }
+
+    public Product getProduct() {
+        return product;
     }
 }

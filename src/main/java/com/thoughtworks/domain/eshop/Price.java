@@ -1,4 +1,4 @@
-package com.thoughtworks.domain;
+package com.thoughtworks.domain.eshop;
 
 import java.util.Currency;
 
@@ -9,5 +9,9 @@ public class Price {
     public Price(double amount) {
         this.amount = amount;
         currency = Currency.getInstance("USD");
+    }
+
+    public double getAmount() {
+        return amount;
     }
 }

@@ -1,6 +1,7 @@
-package com.thoughtworks.domain;
+package com.thoughtworks.domain.eshop;
 
-import com.thoughtworks.domain.constants.ProductName;
+import com.thoughtworks.domain.eshop.constants.ProductName;
+import com.thoughtworks.domain.eshop.service.CompetitorData;
 
 public class Product {
     private final ProductName productName;
@@ -20,8 +21,17 @@ public class Product {
 
     }
 
+    public static Product getProductWithDiscount(ProductName productName) {
+        float discountPrice = CompetitorData.getDiscountPrice(productName);
+        return new Product(productName, new Price(discountPrice));
+    }
+
 
     public ProductName getProductName() {
         return productName;
+    }
+
+    public Price getPrice() {
+        return price;
     }
 }
