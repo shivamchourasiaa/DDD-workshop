@@ -1,4 +1,4 @@
-package com.thoughtworks.domain.eshop;
+package com.thoughtworks.eshop.domain;
 
 import java.util.Currency;
 

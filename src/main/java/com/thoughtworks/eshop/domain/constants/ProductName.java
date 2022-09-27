@@ -1,4 +1,4 @@
-package com.thoughtworks.domain.eshop.constants;
+package com.thoughtworks.eshop.domain.constants;
 
 public enum ProductName {
     I_PAD_PRO,

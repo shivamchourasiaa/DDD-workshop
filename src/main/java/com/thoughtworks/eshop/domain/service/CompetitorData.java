@@ -1,11 +1,11 @@
-package com.thoughtworks.domain.eshop.service;
+package com.thoughtworks.eshop.domain.service;
 
-import com.thoughtworks.domain.eshop.Price;
-import com.thoughtworks.domain.eshop.constants.ProductName;
+import com.thoughtworks.eshop.domain.Price;
+import com.thoughtworks.eshop.domain.constants.ProductName;
 
 import java.util.HashMap;
 
-import static com.thoughtworks.domain.eshop.constants.ProductName.I_PAD_PRO;
+import static com.thoughtworks.eshop.domain.constants.ProductName.I_PAD_PRO;
 
 public class CompetitorData {
     private static final HashMap<ProductName, Price> priceList = new HashMap<ProductName, Price>() {{

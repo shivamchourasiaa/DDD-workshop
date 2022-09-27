@@ -1,10 +1,9 @@
-package com.thoughtworks.domain.eshop;
+package com.thoughtworks.eshop.domain;
 
-import com.thoughtworks.domain.eshop.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import static com.thoughtworks.domain.eshop.constants.ProductName.*;
+import static com.thoughtworks.eshop.domain.constants.ProductName.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 //Problem
@@ -31,6 +30,9 @@ import static org.junit.jupiter.api.Assertions.*;
 //        While Creating Order please do not use Item class but use Product class.
 //        Flatten out products in Item.
 //        'new Order( List<Product> products)
+
+// #11 - Calculate Total cost for the Order.  Put shipping cost as per weight
+// Total cost = cost of all products in order + (weightIngrams of each product *.01)
 
 public class CartTest {
     static Cart cart;
@@ -112,5 +114,18 @@ public class CartTest {
         Order order = cart.checkout();
 
         assertTrue(cart.isCheckedOut());
+    }
+
+    @Test
+    void shouldMatchTotalCostWithWeightForOrder() {
+        Product ipadPro = new Product(I_PAD_PRO, new Price(10.0), new Weight(200.0));
+        Product inkPen = new Product(HERO_INK_PEN, new Price(2.0), new Weight(10.0));
+        cart.add(new Item(ipadPro));
+        cart.add(new Item(inkPen));
+
+        Order order = cart.checkout();
+
+        double expected = 33.0;
+        assertEquals(expected, order.getTotalCost());
     }
 }

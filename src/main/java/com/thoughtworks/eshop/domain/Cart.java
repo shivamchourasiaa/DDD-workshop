@@ -1,6 +1,6 @@
-package com.thoughtworks.domain.eshop;
+package com.thoughtworks.eshop.domain;
 
-import com.thoughtworks.domain.eshop.constants.ProductName;
+import com.thoughtworks.eshop.domain.constants.ProductName;
 
 import java.util.ArrayList;
 
